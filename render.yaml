@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: passeio-nautico-2026
+    runtime: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: ADMIN_USERNAME
+        value: rm172951@gmail.com
+      - key: ADMIN_PASSWORD
+        value: acquanautica

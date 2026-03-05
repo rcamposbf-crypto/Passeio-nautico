@@ -1,0 +1,29 @@
+{
+  "entities": {
+    "Registration": {
+      "title": "Registration",
+      "description": "A registration for the Rio Lontra nautical event",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique ID for the registration" },
+        "name": { "type": "string", "description": "Full name of the participant" },
+        "email": { "type": "string", "format": "email", "description": "Email address" },
+        "phone": { "type": "string", "description": "Phone number" },
+        "vesselType": { "type": "string", "description": "Type of vessel (Barco, Jet Ski, etc.)" },
+        "vesselName": { "type": "string", "description": "Name of the vessel" },
+        "passengers": { "type": "integer", "description": "Number of passengers" },
+        "tshirtSize": { "type": "string", "description": "T-shirt size" },
+        "status": { "type": "string", "enum": ["pending", "confirmed", "cancelled"], "description": "Registration status" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Creation timestamp" },
+        "paymentStatus": { "type": "string", "enum": ["unpaid", "paid"], "description": "Payment status" }
+      },
+      "required": ["name", "email", "phone", "vesselType", "tshirtSize", "createdAt"]
+    }
+  },
+  "firestore": {
+    "registrations": {
+      "schema": "Registration",
+      "description": "Collection of event registrations"
+    }
+  }
+}
